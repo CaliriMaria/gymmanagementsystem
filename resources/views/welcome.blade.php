@@ -1,141 +1,299 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>GymManagementSystem</title>
+    <title>GymManagementSystem</title>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300;1,500;1,900&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300;1,500;1,900&display=swap"
+          rel="stylesheet">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
-        <!--Font awesome-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--tw-bg-opacity: 1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-gray-100{--tw-bg-opacity: 1;background-color:rgb(243 244 246 / var(--tw-bg-opacity))}.border-gray-200{--tw-border-opacity: 1;border-color:rgb(229 231 235 / var(--tw-border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{--tw-shadow: 0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1);--tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow)}.text-center{text-align:center}.text-gray-200{--tw-text-opacity: 1;color:rgb(229 231 235 / var(--tw-text-opacity))}.text-gray-300{--tw-text-opacity: 1;color:rgb(209 213 219 / var(--tw-text-opacity))}.text-gray-400{--tw-text-opacity: 1;color:rgb(156 163 175 / var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity: 1;color:rgb(107 114 128 / var(--tw-text-opacity))}.text-gray-600{--tw-text-opacity: 1;color:rgb(75 85 99 / var(--tw-text-opacity))}.text-gray-700{--tw-text-opacity: 1;color:rgb(55 65 81 / var(--tw-text-opacity))}.text-gray-900{--tw-text-opacity: 1;color:rgb(17 24 39 / var(--tw-text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--tw-bg-opacity: 1;background-color:rgb(31 41 55 / var(--tw-bg-opacity))}.dark\:bg-gray-900{--tw-bg-opacity: 1;background-color:rgb(17 24 39 / var(--tw-bg-opacity))}.dark\:border-gray-700{--tw-border-opacity: 1;border-color:rgb(55 65 81 / var(--tw-border-opacity))}.dark\:text-white{--tw-text-opacity: 1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:text-gray-400{--tw-text-opacity: 1;color:rgb(156 163 175 / var(--tw-text-opacity))}.dark\:text-gray-500{--tw-text-opacity: 1;color:rgb(107 114 128 / var(--tw-text-opacity))}}
-        </style>
+    <!--Font awesome-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <!-- Styles -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-weight: normal;
+            font-size: 15px;
+            letter-spacing: 1.5px;
+            color: #888;
+            line-height: 30px;
+        }
 
-        <style>
-            body {
-                font-family: 'Roboto', sans-serif;
-               margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                font-weight: normal;
-                font-size: 15px;
-                letter-spacing: 1.5px;
-                color: #888;
-                line-height: 30px;
-            }
-            .main_container{
-                background-image: url("{{ asset('img/fitness_model_big.jpg') }}");
-                background-position: center center;
-                background-repeat: no-repeat;
-                background-attachment: fixed;
+        /*.hero-section {*/
+        /*    background-image:;*/
+        /*    background-color: rgba(0, 0, 0, 0);*/
+        /*    background-position: center center;*/
+        /*    background-repeat: no-repeat;*/
+        /*    background-attachment: fixed ;*/
+        /*    background-size: cover;*/
+        /*    width: 100vw;*/
+        /*    height: 80vh;*/
+        /*}*/
+        .hero-section {
+            background: rgba(0, 0, 0, 0) url("{{ asset('img/fitness_model_big.jpg') }}") no-repeat fixed left top / cover;
+            height: 603px;
+            position: relative;
+        }
+        @media only screen and (min-width: 240px) and (max-width: 480px) {
+            .hero-section {
+                background-image: url("{{ asset('img/fitness_model_small.jpg') }}");
+                height: 450px;
+                background-position: 50% 0;
                 background-size: cover;
-                width: 100vw;
-                height: 80vh;
+                background-attachment: scroll;
+                background-repeat: no-repeat;
             }
-            @media only screen and (min-width: 240px) and (max-width: 480px) {
-                .main_container {
-                    background-image: url("{{ asset('img/fitness_model_small.jpg') }}");
-                    height: 450px;
-                    background-position: 50% 0;
-                    background-size: cover;
-                    background-attachment: scroll;
-                    background-repeat: no-repeat;
+        }
+
+        @media (min-width: 481px) and (max-width: 1024px) {
+            .hero-section {
+                background-image: url("{{ asset('img/fitness_model_big.jpg') }}");
+            }
+        }
+
+
+        /*.container {*/
+        /*    width: 1170px;*/
+        /*    padding-right: 15px;*/
+        /*    margin-right: auto;*/
+        /*    margin-left: auto;*/
+        /*}*/
+
+        @media (min-width: 1200px) {
+            .container {
+                width: 1170px;
+            }
+        }
+
+            @media (min-width: 992px) {
+                .container {
+                    width: 970px;
                 }
             }
-
-                @media (min-width: 481px) and (max-width: 1024px) {
-                    .main_container {
-                        background-image: url("{{ asset('img/fitness_model_big.jpg') }}");
+                @media (min-width: 768px) {
+                    .container {
+                        width: 750px;
                     }
                 }
-
-                h1 {
-                    font-family: 'Montserrat', sans-serif;
-                    color: #fff;
-                    font-weight: 400;
-                    font-size: 40px;
-                    letter-spacing: 0;
-                    text-transform: capitalize;
-                    text-align: center;
-                }
-
-                .header-top {
-                    background-color: #2c2c2c;
-                }
-                .text{
-                    color: #fff;
-                    font-size: 16px;
-                    line-height: 20px;
-                    margin-bottom: 27px;
-                    font-family: 'Montserrat', sans-serif;
-                    text-align: center;
-                }
+                    .container {
+                        padding-right: 15px;
+                        margin-right: auto;
+                        margin-left: auto;
+                    }
 
 
-        </style>
+        /* header */
+        .header-top {
+            background: #2c2c2c none repeat scroll 0 0;
+            width: 100%;
+        }
 
-    </head>
-    <body >
-        <div class="main_container sm:mx-auto">
-            <!--start header-->
-           <div class="header-top">
-               <div class="container">
-                   <div class="row-auto">
-                       <div class="columns md:columns-6 sm:columns-6 xs:columns-12">
-                           <div class="header-top-left">
-                               <ul>
-                                   <li class="text-blue-600">pinterest</li>
-                                   <li>Facebook</li>
-                                   <li>you tube</li>
-                                   <li>twitter</li>
-                               </ul>
-                           </div>
-                       </div>
-                       <div class="columns md:columns-6 sm:columns-6 xs:columns-12">
-                           <div class="header-top-right">
+        .header-top-left ul li a {
+            color: #717171;
+            display: inline-block;
+            font-size: 18px;
+        }
 
-                               @if (Route::has('login'))
-                                   <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                                       @auth
-                                           <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                                       @else
-                                           <a href="{{ route('login') }}" class="text-slate-50">Log in</a>
+        .header-top-left ul li {
+            display: inline-block;
+            margin-right: 21px;
+        }
+        ul {
+            list-style: none outside;
+            padding: 0;
+            margin: 0;
+        }
 
-                                           @if (Route::has('register'))
-                                               <a href="{{ route('register') }}" class="text-slate-50">Register</a>
-                                           @endif
-                                       @endauth
-                                   </div>
-                               @endif
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
-            <!--main content-->
-            <div class="hero-section">
-                <div class="container">
-                    <div class="row">
-                        <div class="columns-12">
-                            <div class="hero-content">
-                                <h1>La tua gym app </h1>
-                                <p class="text">Maximum Results in Minimum Time, no matter your location </p>
-                            </div>
-                        </div>
+        li {
+            line-height: 18px;
+            margin-bottom: 0px;
+        }
+        .grid-cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));!important;
+        }
+
+        .fa-brands::before {
+            display: inline-block;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .Pinterest-P::before {
+            content: ' \f231';
+        }
+
+        .fa-youtube::before {
+            content: "\f16a";
+        }
+
+        .fa-twitter:before {
+            content: "\f099";
+        }
+
+        .header-top-right {
+                text-align: right;
+        }
+            .single-htr {
+                display: inline-block;
+                margin-left: 18px;
+                position: relative;
+            }
+            .menu{
+                background: #1a1a1a none repeat scroll 0 0;
+                padding: 12px 0;
+            }
+        .menu ul li {
+            display: inline-block;
+            margin-right: 4px;
+            position: relative;
+        }
+        .menu ul li a {
+            color: #f2f2f2;
+            display: inline-block;
+            font-family: "Open Sans", sans-serif;
+            padding: 10px;
+        }
+
+        .hero-content {
+            padding-top: 188px;
+            text-align: center;
+        }
+
+        .main_title {
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            font-weight: 400;
+            font-size: 40px;
+            margin-bottom: 6px;
+            letter-spacing: 0;
+            text-transform: capitalize;
+            text-align: center;
+        }
+
+
+        .text {
+            color: #fff;
+            font-size: 16px;
+            line-height: 20px;
+            margin-bottom: 27px;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+        }
+
+        #button{
+            background: #f13b3e none repeat scroll 0 0;
+            border-radius: 25px;
+            display: inline-block;
+            line-height: 50px;
+            padding: 0 25px;
+            text-transform: uppercase;
+        }
+        #subscribe, #subscribe:visited {
+            text-decoration: none;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: normal;
+            font-size: 12px;
+            letter-spacing: 0;
+            transition: all 0.3s ease-in-out;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            outline: 0;
+        }
+
+
+    </style>
+
+</head>
+<body>
+<div >
+    <!--start header-->
+    <header>
+    <div class="header-top">
+        <div  class="container ">
+                <div class="grid grid-cols-2">
+{{--            <div class="grid-rows-1">--}}
+{{--                <div class="container m-auto grid grid-cols-2">--}}
+                    <div class=" header-top-left">
+                        <ul>
+                                <li><a href="#" class='Pinterest-P fontawesomeicon'><i
+                                            class="fa-brands fa-pinterest-p"></i></a></li>
+                                <li><a href="#"> <i class="fa-brands fa-youtube"></i></a></li>
+                                <li><a href="#"> <i class="fa-brands fa-twitter"></i></a></li>
+                        </ul>
                     </div>
+            <div class="header-top-right">
+                @if (Route::has('login'))
+                    <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                        @auth
+                            <a  href="{{ url('/dashboard') }}"
+                               class=" single-htr text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+                        @else
+                            <a id="sign_in" href="{{ route('login') }}" class=" single-htr text-slate-50">Log in</a>
+
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="single-htr text-slate-50">Register</a>
+                            @endif
+                        @endauth
+                    </div>
+                @endif
+            </div>
+            </div>
+    </div>
+        <div class="menu hidden-sm ">
+            <div class="container">
+            <div class="grid grid-cols-2">
+                <div>
+                <img src="img/logo.png">
+                </div>
+                <div>
+                <nav>
+                    <ul>
+                        <li><a>Lorem</a></li>
+                        <li><a>Lorem</a></li>
+                        <li><a>Lorem</a></li>
+                        <li><a>Lorem</a></li>
+                        <li><a>Lorem</a></li>
+                    </ul>
+                </nav>
                 </div>
             </div>
         </div>
-    </body>
+</div>
+{{--</div>--}}
+{{--    </div>--}}
+    </div>
+    </header>
+<!--main content-->
+
+<div class="hero-section">
+    <div class="container">
+        <div class="grid-rows-1">
+            <div class="columns-12">
+                <div class="hero-content">
+                    <h1 class="main_title">La tua gym app </h1>
+                    <p class="text">Maximum Results in Minimum Time, no matter your location </p>
+                    <button id="button"><a id="subscribe" href="#">seleziona il tuo programma</a> </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+</body>
 </html>
