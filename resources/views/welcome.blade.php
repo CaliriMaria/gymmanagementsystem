@@ -300,8 +300,8 @@
 
         .box:hover {
             background-color: #f13b3e;
-            width: 360px;
-            height: 250px;
+            width: 200px;
+            height: 200px;
             border-radius: 40px;
         }
 
