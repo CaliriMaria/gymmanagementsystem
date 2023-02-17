@@ -41,4 +41,38 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function roles()
+    {
+        return $this->belongsToMany(Roles::class);
+    }
+
+    public function membership(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Membership::class);
+    }
+
+    public function subscription()
+    {
+        return $this->belongsTo('subscription');
+    }
+    public function lesson()
+    {
+        return $this->belongsTo('lessons');
+    }
+
+    public  function payment()
+    {
+        return $this->belongsTo('payments');
+    }
+
+    public function booking()
+    {
+        return $this->belongsTo('bookings');
+    }
+
+    public function checkin()
+    {
+        return $this->belongsTo('checkins');
+    }
 }
