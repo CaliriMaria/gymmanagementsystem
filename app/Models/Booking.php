@@ -10,7 +10,8 @@ class Booking extends Model
     use HasFactory;
 
 
-    public function users(){
+    public function users(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
         return $this->hasMany('users');
     }
 }

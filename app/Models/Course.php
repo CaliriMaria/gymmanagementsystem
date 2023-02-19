@@ -13,9 +13,9 @@ class Course extends Model
         'number_max_checkin'
     ];
 
-    public function lesson()
+    public function lessons()
     {
-        $this->belongsTo('lesson');
+        $this->belongsTo('lessons');
     }
 
 

@@ -12,4 +12,11 @@ class Payment extends Model
     public  function users(){
         $this->hasMany('users');
     }
+
+    public function user()
+    {
+        $this->hasMany('users');
 }
+}
+
+
