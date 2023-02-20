@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role'
     ];
 
     /**
@@ -44,7 +45,17 @@ class User extends Authenticatable
 
     public function roles()
     {
-        return $this->belongsToMany(Roles::class);
+        return $this->belongsToMany(Role::class);
+    }
+
+    public function hasAnyRole($roles): bool
+    {
+        foreach($roles as $role){
+            if($this->hasRole($role)){
+                return true;
+            }
+        }
+        return false;
     }
 
     public function membership(): \Illuminate\Database\Eloquent\Relations\BelongsToMany

@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Checkin extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'user_id',
+        'lesson_id'
+    ];
 
     public  function users()
     {

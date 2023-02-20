@@ -19,7 +19,6 @@ return new class extends Migration
             $table->boolean('done');
 
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->foreignId('lesson_id')->constrained()->cascadeOnDelete();
             $table->foreignId('room_id')->constrained();
 
