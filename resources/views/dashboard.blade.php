@@ -55,11 +55,33 @@
             display: grid;
             grid-template-columns: repeat(1, 1fr);
         }
+         #section{
+             display: grid;
+             grid-template-columns: repeat(1, 1fr);
+         }
+         #welcome{
+             display: grid;
+             grid-template-columns: repeat(1, 1fr);
+             justify-items: end
+         }
+        #allenamenti{
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+        }
+
     }
+
+    .put-end{
+        justify-content: end;
+    }
+    @media only screen and (min-width: 240px) and (max-width: 480px) {
+
+    }
+
+
 
 </style>
 <body>
-<div class="container">
     <button data-drawer-target="sidebar-multi-level-sidebar" data-drawer-toggle="sidebar-multi-level-sidebar" aria-controls="sidebar-multi-level-sidebar" type="button" class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
         <span class="sr-only">Open sidebar</span>
         <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -131,30 +153,243 @@
     </aside>
 
     <div class="p-4 sm:ml-64">
-        <div class="grid grid-cols-2">
-            <div>
-                welcome
+        <div id="welcome" class="grid grid-cols-2">
+            <div  class=" flex justify-content-start">
+                <p class="text-2xl text-black font-bold">Welcome,  {{  Auth::user()->name  }}</p>
             </div>
-            <div> <img class="w-10 h-10 rounded" src="/docs/images/people/profile-picture-5.jpg" alt="Default avatar"></div>
+            <div class="flex put-end" role="group">
+                <div> <img class="w-10 h-10 rounded mr-3" src="/img/bell-icon.png" alt="Default avatar"></div>
+                <div> <img class="w-10 h-10 rounded" src="/img/avatar.png" alt="Default avatar"></div>
+            </div>
 
         </div>
+
+        <div class="grid grid-cols-1 mb-6 mt-10">
+            <table class="table p-4 bg-white rounded-lg shadow">
+                <thead>
+                <tr>
+                    <th class="border p-4 dark:border-dark-5 whitespace-nowrap font-bold text-gray-900 bg-red-600 ">
+                        Orari
+                    </th>
+                    <th class="border p-4 dark:border-dark-5 whitespace-nowrap text-black font-bold bg-red-600">
+                        Lunedi
+                    </th>
+                    <th class="border p-4 dark:border-dark-5 whitespace-nowrap text-gray-900 bg-red-600 font-bold">
+                        Martedì
+                    </th>
+                    <th class="border p-4 dark:border-dark-5 whitespace-nowrap text-gray-900 bg-red-600 font-bold">
+                        Mercoledì
+                    </th>
+                    <th class="border p-4 dark:border-dark-5 whitespace-nowrap text-gray-900 bg-red-600 font-bold">
+                        Giovedì
+                    </th>
+                    <th class="border p-4 dark:border-dark-5 whitespace-nowrap text-gray-900 bg-red-600 font-bold">
+                        Venerdì
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="text-gray-700">
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        8:15-9:00
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        <strong>Funzionale</strong><br>
+                        Marta
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        <strong>Zumba</strong><br>
+                        Louis
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        <strong>Funzionale</strong><br>
+                        Marta
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        <strong>Zumba</strong><br>
+                        Louis
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        <strong>Funzionale</strong><br>
+                        Marta
+                    </td>
+                </tr>
+                <tr class="text-gray-700">
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        9:30-10:15
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        <strong>Yoga</strong><br>
+                        Eric
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        <strong>Yoga</strong><br>
+                        Prouve
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+
+                    </td>
+                </tr>
+                <tr class="text-gray-700">
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        13:00-13:45
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        <strong>Spinning</strong><br>
+                        julia
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        <strong>Spinning</strong><br>
+                        julia
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        <strong>Spinning</strong><br>
+                        julia
+                    </td>
+
+                </tr>
+                <tr class="text-gray-700">
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        15:00-16:30
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        <strong>Kick-box</strong><br>
+                        Igor
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        <strong>Crossfit</strong><br>
+                        Louth
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        <strong>Crossfit</strong><br>
+                        Louth
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        <strong>Kick-boxing</strong><br>
+                        Igor
+                    </td>
+                </tr>
+                <tr class="text-gray-700">
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        17:00-18:30
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        <strong>Fitness combat</strong><br>
+                        Igor
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        <strong>Pump</strong><br>
+                        Louth
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        <strong>Fitness combat</strong><br>
+                        Igor
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        <strong>Crossfit</strong><br>
+                        Louth
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        <strong>Pump</strong><br>
+                        Louth
+                    </td>
+                </tr>
+                <tr class="text-gray-700">
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        19:00-20:15
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        <strong>Kick-boxing</strong><br>
+                        Igor
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        <strong>Zumba</strong><br>
+                        Anastasia
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+
+                    </td>
+                    <td class="border p-4 dark:border-dark-5 text-center">
+                        <strong>Zumba</strong><br>
+                        Anastasia
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="flex justify-center">
+            <button type="button" class="text-gray-900 w-96  mt-5 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-bold rounded-lg text-md px-5 py-2.5 text-center mr-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">Prenota la tua lezione!</button>
+            </div>
+        </div>
         <div class="p-4 ">
-            <div class="grid grid-cols-3 gap-4 mb-4">
-                <div id="box-staff" class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-                    <p class="text-2xl text-gray-400 dark:text-gray-500">Staff member</p>
+            <div id="allenamenti" class="grid grid-cols-4 gap-3 mb-4">
+
+                <div id="box-staff" class="max-w-md p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <img class="w-20 h-20 mb-2 text-gray-500 dark:text-gray-400 justify-center" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" src="img/staff.png" >
+                    <a href="#">
+                        <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Staff</h5>
+                    </a>
+                    <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
+                    <a href="#" class="inline-flex items-center text-red-600 hover:underline">
+                        guarda i nostri trainer
+                        <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg>
+                    </a>
                 </div>
-                <div id="box-notifiche" class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-                    <p class="text-2xl text-gray-400 dark:text-gray-500"><span id="icon"><i class="fa-regular fa-bell"></i></span>Notifiche</p>
+
+                <div id="box-staff" class="max-w-md p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <img class="w-20 h-20 mb-2 text-gray-500 dark:text-gray-400 justify-center" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" src="img/account.png" >
+                    <a href="#">
+                        <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Account</h5>
+                    </a>
+                    <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
+                    <a href="#" class="inline-flex items-center text-red-600 hover:underline">
+                        dettagli acoount
+                        <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg>
+                    </a>
                 </div>
-                <div id="box-messaggi" class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-                    <p class="text-2xl text-gray-400 dark:text-gray-500">Messaggi</p>
+                <div id="box-staff" class="max-w-md p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <img class="w-20 h-20 mb-2 text-gray-500 dark:text-gray-400 justify-center" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" src="img/faq.png" >
+                    <a href="#">
+                        <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Faq</h5>
+                    </a>
+                    <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
+                    <a href="#" class="inline-flex items-center text-red-600 hover:underline">
+                        vai alle faq
+                        <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg>
+                    </a>
+                </div>
+
+            <div id="box-stato-allenamenti" class="max-w-md p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <a href="#">
+                    <img class="p-8 rounded-t-lg" src="img/chart.png" alt="product image" />
+                </a>
+                <div class="px-5 pb-5 ">
+                    <a href="#">
+                        <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Stato allenamenti</h5>
+                    </a>
                 </div>
             </div>
-            <div id="box-stato-allenamenti" class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
-                <p class="text-2xl text-gray-400 dark:text-gray-500">Stato degli allenamenti</p>
             </div>
-            <div class="grid grid-cols-2 gap-4 mb-4">
-                <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+            </div>
+            <div id="section" class="grid grid-cols-2 gap-4 mb-4 justify-items-center mt-5">
+                <div class="w-full  p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
                     <div class="flex items-center justify-between mb-4">
                         <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Prossime attività</h5>
                     </div>
@@ -212,7 +447,7 @@
                     </div>
                 </div>
 
-                <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                <div class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
                     <div class="flex items-center justify-between mb-4">
                         <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Abbonamenti</h5>
                     </div>
@@ -271,101 +506,26 @@
                 </div>
 
             </div>
-            <div class="grid grid-cols-1 mb-6">
-                <table class="table p-4 bg-white rounded-lg shadow">
-                    <thead>
-                    <tr>
-                        <th class="border p-4 dark:border-dark-5 whitespace-nowrap font-normal text-gray-900">
-                            #
-                        </th>
-                        <th class="border p-4 dark:border-dark-5 whitespace-nowrap font-normal text-gray-900">
-                            Lunedi
-                        </th>
-                        <th class="border p-4 dark:border-dark-5 whitespace-nowrap font-normal text-gray-900">
-                            Martedì
-                        </th>
-                        <th class="border p-4 dark:border-dark-5 whitespace-nowrap font-normal text-gray-900">
-                            Mercoledì
-                        </th>
-                        <th class="border p-4 dark:border-dark-5 whitespace-nowrap font-normal text-gray-900">
-                            Giovedì
-                        </th>
-                        <th class="border p-4 dark:border-dark-5 whitespace-nowrap font-normal text-gray-900">
-                            venerdì
-                        </th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr class="text-gray-700">
-                        <td class="border p-4 dark:border-dark-5">
-                            1
-                        </td>
-                        <td class="border p-4 dark:border-dark-5">
-                            Jean Marc
-                        </td>
-                        <td class="border p-4 dark:border-dark-5">
-                            Louis
-                        </td>
-                        <td class="border p-4 dark:border-dark-5">
-                            Jl987
-                        </td>
-                    </tr>
-                    <tr class="text-gray-700">
-                        <td class="border p-4 dark:border-dark-5">
-                            2
-                        </td>
-                        <td class="border p-4 dark:border-dark-5">
-                            Eric
-                        </td>
-                        <td class="border p-4 dark:border-dark-5">
-                            Prouve
-                        </td>
-                        <td class="border p-4 dark:border-dark-5">
-                            prouveE
-                        </td>
-                    </tr>
-                    <tr class="text-gray-700">
-                        <td class="border p-4 dark:border-dark-5">
-                            3
-                        </td>
-                        <td class="border p-4 dark:border-dark-5">
-                            Julien
-                        </td>
-                        <td class="border p-4 dark:border-dark-5">
-                            Clai
-                        </td>
-                        <td class="border p-4 dark:border-dark-5">
-                            CJUL87
-                        </td>
-                    </tr>
-                    <tr class="text-gray-700">
-                        <td class="border p-4 dark:border-dark-5">
-                            4
-                        </td>
-                        <td class="border p-4 dark:border-dark-5">
-                            Igor
-                        </td>
-                        <td class="border p-4 dark:border-dark-5">
-                            Louth
-                        </td>
-                        <td class="border p-4 dark:border-dark-5">
-                            IGL89_9
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
 
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-                <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-                    <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
-                </div>
-                <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-                    <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+        <footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
+    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.
+    </span>
+            <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+                <li>
+                    <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
+                </li>
+                <li>
+                    <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+                </li>
+                <li>
+                    <a href="#" class="mr-4 hover:underline md:mr-6">Licensing</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline">Contact</a>
+                </li>
+            </ul>
+        </footer>
+
 </body>
 </html>

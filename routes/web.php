@@ -18,19 +18,26 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-//rotte per le dashboard
-//Route::prefix('dashboard')->group(function(){
-//    Route::middleware('role:Admin|Staff|Trainer|User')->group(function(){
-//        Route::get('/home', [HomeController::class, 'index'])->name('dashboard');
-//        Route::get('/admin/home', [HomeController::class, 'index'])->name('admin.dashboard');
-//        Route::get('/staff/home', [HomeController::class, 'index'])->name('staff.dashboard');
-//        Route::get('/trainer/home', [HomeController::class, 'index'])->name('trainer.dashboard');
-//    });
-//});
 
+//Route::get('/dashboard', function () {
+//    return view('dashboard');
+//})->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'user'])->name('dashboard');
+
+// ADMIN DASHBOARD
+Route::get('/admin_dashboard', function () {
+    return view('admin.dashboard');
+})->middleware(['auth', 'admin'])->name('admin.dashboard');
+
+Route::get('/staff_dashboard', function () {
+    return view('staff.dashboard');
+})->middleware(['auth', 'staff'])->name('staff.dashboard');
+
+Route::get('/trainer_dashboard', function () {
+    return view('trainer.dashboard');
+})->middleware(['auth', 'trainer'])->name('trainer.dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

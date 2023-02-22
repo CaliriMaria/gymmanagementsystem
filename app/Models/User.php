@@ -43,19 +43,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function roles()
+    public function hasRole(string $role): bool
     {
-        return $this->belongsToMany(Role::class);
-    }
-
-    public function hasAnyRole($roles): bool
-    {
-        foreach($roles as $role){
-            if($this->hasRole($role)){
-                return true;
-            }
-        }
-        return false;
+        return $this->getAttribute('role') === $role;
     }
 
     public function membership(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
